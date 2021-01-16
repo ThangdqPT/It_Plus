@@ -1,0 +1,37 @@
+1 - Thành phần inline và block: 
++ Mỗi thẻ HTML sẽ có 1 kiểu hiển thị mặc định: block và inline;
++ Kiểu block: width chiếm full độ rộng, ko thể đứng chung hàng với thẻ khác;
+Exp: div, h, p, ul, li, ol,...
++ Kiểu inlune: width chỉ vừa đủ nội dung, đứng chung với inline;
+Exp: b, u, i, img, span, a;
++ Cách xác định inline/block: cho thẻ đó báo lấy 1 nội dung ngắn, set màu nền -> màu nền full width -> block, nếu màu nền chỉ vừa đủ nội dung -> inline; 
+
+!Nên dùng inline-block thây vì inline để linh hoạt khi margin top, bottom
+
+2 - Css float/flex
++ Dùng dựng layout/hàng-cột cho trang web;
++ Thẻ table cũng có thể được dùng để layout -> hiện nay ko nên dùng vì ko linh hoạt trên các thiết bị nhỏ;
++ ko nền dùng display: inline / inline-block để dựng layout trang; 
++ nên dùng cơ chế float / flex để dựng -> nên dùng flex để dựng cho đơn giản, có dạng khác là grid;
++ cách tạo cấu trúc layout: 
+Hàng có class = row
+Xác định hàng đó có bao nhiêu cột, dùng các thẻ div để tạo ra các cột đó
+
++ Xác định cơ chế dựng layout: float/flex: 
+	- set width tương ứng cho cột
+		+ Với float, luôn xử lý trường hợp giao diện bị vỡ, vì phần tử bị float luôn có xu hướng hút phần tử ngay sát phía sau nó;
+		- Cách fix: 
+			+ Can thiệp vào Html, tạo 1 phần html rỗng ngay phía sau float cuối cùng, dùng css clear:both cho khối rỗng này;
+			+ Ko cần can thiệp Html, dùng css trên class dùng overflow: auto để fix ; 
+
++ Css Display: kiểu hiện thị của selector;
+
++ Dàn trang theo kiểu flex (nên dùng hơn là float vì đơn giản hơn rất nhiều, ko cần phải fix vỡ giao diện);
+	- Cơ chế mặc định của flex luôn giữ các cột bên trong nằm trên 1 hàng, ko quan tâm đến width của từng cột, hay nếu tổng width của các cột > 100% ko bị xuốn dòng;
+	- Áp dụng css display: flex cho hang, set width tương ứng cho từng cột;
+
+3 - Các dụng khung trang web:
+
+- Đi từ trên -> dưới của web mẫu 
+- Chia thành từng vùng / div, xác định vùng này có cần cấu trúc layout hay ko, nếu có trên 1 cột thì cần áp dụng row-col;
+- Code HTML
